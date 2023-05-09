@@ -1,0 +1,49 @@
+Part 2.1
+There seems to be a counter for how many times a password was used.
+The application keeps in mind to save its password hashed, but then it saves the passwords in plaintext in this counter.
+This is what makes no sense. Therefore, we need to change this by implementing the counter but by using the hashed passwords instead.
+
+In giftcardvew function, there is only a check on the username of the recipient of the gift. If a session is already logged in, an attacker can gift themselves a card. 
+to avoid this, we can prompt and check for login credentials again.
+
+
+Part 2.2
+
+Very simple. Add another attribute to the graph dict. And increment it with the inc() function before every return with 404
+
+
+Part 2.3 PROMETHEUS
+
+Install helm. 
+Add the prometheus repo to helm
+Install prometheus while minikube is running. 
+
+Now we can notice that prometheus is running. We can also check with 
+
+kubectl get pods
+
+This gave me the output of 5 prometheus pods:
+prometheus-alertmanager-55dd4bbb7f-fn8hx        2/2     Running                      0          2m8s
+prometheus-kube-state-metrics-748fc7f64-wm8th   1/1     Running                      0          2m8s
+prometheus-node-exporter-h9bb8                  1/1     Running                      0          2m8s
+prometheus-pushgateway-777b9bdbf7-np65v         1/1     Running                      0          2m8s
+prometheus-server-5d9d55c5d6-7d8km              2/2     Running                      0          2m8s
+
+Running
+kubectl get configmap
+
+We get:
+NAME                      DATA   AGE
+kube-root-ca.crt          1      11m
+prometheus-alertmanager   1      2m26s
+prometheus-server         5      2m26s
+
+We now need to edit the yaml file using the built in vim editor
+kubectl edit configmap prometheus-server
+
+Set proxy-server:8080 in the edit.
+
+We can visually see promethues reports using 
+kubectl port-forward deployment/prometheus-server 9090:9090
+
+

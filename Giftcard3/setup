@@ -1,0 +1,6 @@
+minikube start
+eval $(minikube docker-env)
+./docshell.sh
+./kubeshell.sh
+kubectl get pods
+kubectl get service
