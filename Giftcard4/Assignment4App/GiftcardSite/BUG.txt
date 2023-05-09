@@ -1,0 +1,6 @@
+We are taking the card number from the user. We also are checking user credentials but nowhere are we 
+checking if the user and the card number are correctly corresponding. 
+
+An easy solution for this would be to use the same system as a password. Check if the user and the card number are matching.
+Even better is, once a user logs in, find the matching card number, and use the card number to reference to the user all the time. 
+This way, we are logging in to the user themselves.

@@ -1,0 +1,15 @@
+Enter the username:
+admin
+Password is:  adminpassword
+Time:  31
+Speed:  154
+
+Time taken is 31 seconds
+Speed was 154 tries per second
+
+wordlist used here is a custom passwords.txt file. The file is attached.
+
+
+2 Methods to defend against an attack like this:
+1. Limit the number of login attempts from a particular user. 
+2. Use Multi-Factor Authentication for logins. So even if password is correct, login is not possible.

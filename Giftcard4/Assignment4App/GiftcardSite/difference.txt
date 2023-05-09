@@ -1,0 +1,15 @@
+1. The two types of intents are explicit and implicit.
+Explicit intents specify the component/application which is required to satisfy the intent. 
+Implicit intents do not specify any component, they declare an action to perform. Another app's component handles this action.
+
+2. Explicit intent is more secure.
+Implicit intents can cause the data to be leaked to third party apps since it does not have a set receiver.
+
+3. Explicit
+
+4. Explicit
+
+5. SecondFragment.kt has an error where the explicit intent is not implemented correctly. Thus restricting a user from the activities. ThirdFragment.kt is the correct implementation.
+
+
+SecondFragment.kt is now modified to implement a proper explicit intent.
